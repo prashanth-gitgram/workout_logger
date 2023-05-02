@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-md-4 col-md-offset-4">
+    <h1>Update workout</h1>
+    <form action="{{ url_for('main.update_workout', workout_id=workout.id) }}" method="post">
+        <div class="form-group">
+            <label for="name">Workout Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="workout_name"
+              value={{workout.workout_name}}
+              
+            />
+          </div>
+        <div class="form-group">
+            <label for="sets">Sets</label>
+            <input
+              type="number"
+              class="form-control"
+              id="sets"
+              name="sets"
+              value={{workout.sets}}
+              
+            />
+          </div>
+          
+          <button type="submit" class="btn btn-primary">Update Workout</button>
+        </form>
+      </div>
+    </form>
+
+</div>
+{% endblock content %}
